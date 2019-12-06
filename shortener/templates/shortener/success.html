@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{%  block content %}
+<div class="card text-center col-5 mx-auto mt-5 px-auto">
+  <div class="card-header">
+    <h1>Created!</h1>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">original url: {{object.url}}</h5>
+    {% if object.clickevent %}<p>Count: {{object.clickevent.count}}</p>{% endif %}
+    <p class="card-text">Shorten url: {{object.get_short_url}}</p>
+    <a href="{{object.get_absolute_url}}">{{object.get_short_url}}</a>
+  </div>
+  <div class="card-footer text-muted">
+    created at: {{object.timestamp}}
+  </div>
+</div>
+{% endblock %}

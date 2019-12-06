@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row mt-5 pt-5 text-center">
+	<div class="col-4 mx-auto mt-5" style="width: 600px;">
+		<h1>{{title}}</h1>
+	 	<form method="POST" action=".">
+	 		{% csrf_token %}
+	 		<!-- <input name="url" type="text" placeholder=" Enter your url" > -->
+	 		{{form.as_p}}
+	 		<input type="submit"  class='btn btn-success' value="Shorten URL">
+	 	</form>
+	</div>
+</div>
+{% endblock %}
+
+
+
