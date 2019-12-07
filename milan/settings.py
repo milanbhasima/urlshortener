@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-
+import django_heroku
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +25,7 @@ SECRET_KEY = 'j8xzakn*3x(bvzd645=$%q@59_0m3uzgyxmibfv^y+t15t_qy1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,3 +123,5 @@ STATIC_URL = '/static/'
 
 SHORTCODE_MAX=15
 SHORTCODE_MIN=6
+
+django_heroku.settings(locals())
